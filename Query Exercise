@@ -42,15 +42,15 @@ inner join store on store.store_id = inventory.store_id
 group by store.store_id
 
 
-a. Display the first and last names of all actors whose last names end in ‘son’. (e.g. Johnson, Ericson etc.)
+f. Display the first and last names of all actors whose last names end in ‘son’. (e.g. Johnson, Ericson etc.)
 Ans:
 select first_name, last_name from actor where last_name like '%son'
 
-b. Print all addresses in which the second address is not empty.
+g. Print all addresses in which the second address is not empty.
 Ans:
 select address, address2, district, city_id, postal_code from address where address2 is null
 
-c. List all film categories which have more than 50 films. (Display the name of each category and the number of films each contains)
+h. List all film categories which have more than 50 films. (Display the name of each category and the number of films each contains)
 Ans:
 select category.name, count(film_category.film_id) as TotalFilms from film_category
 inner join category on category.category_id = film_category.category_id
@@ -58,12 +58,12 @@ group by film_category.category_id having TotalFilms > 50
 order by TotalFilms
 
 
-d. Show in how many film categories the average difference between the film replacement cost and the rental rate larger than 15.
+i. Show in how many film categories the average difference between the film replacement cost and the rental rate larger than 15.
 Ans:
 select count(film_category.category_id) as 'Number of categories' from film_category
 inner join film on film_category.film_id = film.film_id
 having avg(film.replacement_cost - film.rental_rate) > 15
 
-e. Display all films which are emotional (according to description) or contain ‘angels’ in their title.
+j. Display all films which are emotional (according to description) or contain ‘angels’ in their title.
 Ans:
 select title from film where description like '%emotional%' or title like '%angels%'
