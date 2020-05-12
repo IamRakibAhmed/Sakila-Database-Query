@@ -52,7 +52,7 @@ select first_name, last_name from actor where last_name like '%son'
 
 #### g. Print all addresses in which the second address is not empty.
 Ans:
-select address, address2, district, city_id, postal_code from address where address2 is null
+select address, address2, district, city_id, postal_code from address where address2 is not null
 
 #### h. List all film categories which have more than 50 films. (Display the name of each category and the number of films each contains)
 Ans:
